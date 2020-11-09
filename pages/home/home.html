@@ -1,0 +1,61 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Dynamic Forms</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="getting-started">
+	<div class="home-hello">
+		<img src="https://picsum.photos/g/1024/786?image=" />
+
+		<div class="hello-title" text-wrap>
+			<h1>ABC Corp Inc.</h1>
+			50 Market Street, San Francisco, California 94103, United States
+		</div>
+	</div>
+
+	<ion-row *ngFor="let tilePair of tiles">
+		<ion-col *ngFor="let tile of tilePair">
+			<ion-card class="tile" (click)="navigateTo(tile)">
+				<ion-card-content>
+					<ion-item>
+						<h1><ion-icon [name]="tile.icon"></ion-icon></h1>
+						<h2>{{tile.title}}</h2>
+					</ion-item>
+				</ion-card-content>
+			</ion-card>
+		</ion-col>
+	</ion-row>
+
+	<ion-card>
+		<ion-list>
+			<button ion-item (click)="callUs()">
+					<ion-icon name="phone-portrait" item-start></ion-icon>
+					Call us
+			</button>
+
+			<button ion-item (click)="sendEmail()">
+					<ion-icon name="mail" item-start></ion-icon>
+					Send us and Email
+			</button>
+
+
+
+			<button ion-item  (click)="getDirections()">
+					<ion-icon  name="compass" item-start></ion-icon>
+					Find us / Get directions
+			</button>
+
+
+
+			<button ion-item (click)="openFacebookPage()">
+					<ion-icon name="logo-facebook" item-start></ion-icon>
+					Visit us on Facebook
+			</button>
+		</ion-list>
+	</ion-card>
+
+</ion-content>
